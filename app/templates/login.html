@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} </title>
+      {% else %}
+      <title>Welcome to Meir</title>
+      {% endif %}
+    </head>
+    <body>
+    <h1>Sign In</h1>
+    <form action="" method="post" novalidate >
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label  }}<br>
+            {{ form.username(id = "uname") }}
+            {% for error in form.username.errors %}
+            <span id = "incorrect" style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label  }}<br>
+            {{ form.password(id = "pword") }}
+            {% for error in form.password.errors %}
+            <span id = "incorrect" style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.multifa.label  }}<br>
+            {{ form.multifa(id = "2fa") }}
+        </p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+    </body>
+</html>
+
+
+
+
+
+{##}
+{#<html>#}
+{#  <head>#}
+{#    <title>Flask Intro - login page</title>#}
+{#    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">#}
+{#  </head>#}
+{#  <body>#}
+{#    <div class="container">#}
+{#      <h1>Please login</h1>#}
+{#      <br>#}
+{#      <form action="" method="post">#}
+{#        <input type="text" placeholder="Username" id="uname" name="uname" value="{{#}
+{#          request.form.uname }}"> <br>#}
+{#         <input type="password" placeholder="Password" id="pword" name="pword" value="{{#}
+{#          request.form.pword }}"><br>#}
+{#          <input class="btn btn-default" type="submit" value="Login"><br><br>#}
+{#          <input type="test" placeholder="2FA" id="2fa" name="fa" value="{{#}
+{#          request.form.fa }}">#}
+{##}
+{#      </form>#}
+{#      {% if error %}#}
+{#        <p class="error"><strong>Error:</strong> {{ error }}#}
+{#      {% endif %}#}
+{#    </div>#}
+{#  </body>#}
+{#</html>#}

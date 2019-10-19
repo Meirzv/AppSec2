@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} </title>
+      {% else %}
+      <title>Welcome to Meir</title>
+      {% endif %}
+    </head>
+    <body>
+    <h1>{{ title }}</h1>
+    <form action="" method="post" novalidate >
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label  }}<br>
+            {{ form.username(id = "uname") }}
+            {% for error in form.username.errors %}
+            <span id = "incorrect" style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label  }}<br>
+            {{ form.password(id = "pword") }}
+            {% for error in form.password.errors %}
+            <span id = "incorrect" style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.multifa.label  }}<br>
+            {{ form.multifa(id = "2fa") }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul id="failure">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+    </body>
+</html>

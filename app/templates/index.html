@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meir Zeevi - Flask</title>
+</head>
+<body>
+<p><h1>Meir Zeevi Security Test Website Using Flask</h1>
+    <br>             Welcome Everyone - Test Spell Check App</br>
+
+        <br>Click <a href="register">here</a> to register
+        <br>Already a user? Click <a href="login">here</a> to sign in
+</p>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages  %}
+        <ul id="success">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+</body>
+</html>
