@@ -1,5 +1,7 @@
 import os
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 
-SECRET_KEY = os.urandom(32) or "meir-zeevi"
+class Config(object):
+    SECRET_KEY = os.urandom(32) or "meir-zeevi"
 
