@@ -1,0 +1,10 @@
+# ignore objects and archives, anywhere in the tree.
+*.[oa]
+dictionary.h.gch
+test_main
+__pycache__/config.cpython-36.pyc
+app/__pycache__/__init__.cpython-36.pyc
+app/__pycache__/forms.cpython-36.pyc
+app/__pycache__/views.cpython-36.pyc
+venv/
+virtualenv.txt
