@@ -1,42 +1,31 @@
-from flask import render_template, flash, redirect, request
-from app import app
+from flask import render_template, flash, redirect, request, url_for
+from flask_login import current_user
+
+from app import app, db, models
 from app.forms import LoginForm, RegisterForm, SpellChecker
 from app.models import LoginUser
-
-programMemory = dict()  # [key = lower key username. value = 1) password, 2) original username, 3) 2fa]
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        if form.username.data.lower() in programMemory.keys():
-            if form.password.data == programMemory[form.username.data.lower()][0]:
-                flash("Login is successful ")
-                return redirect('/spell_check')
-            else:
-                flash("Password is incorrect. Please try again")
-                return redirect('/login')
-        else:
-            flash("Username is incorrect. Please try again")
-            return redirect('/login')
-        return redirect('/')
+        pass
     return render_template('login.html', title='Sign In', form=form)
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
     form = RegisterForm()
     if form.validate_on_submit():
-        if form.username.data.lower() in programMemory.keys():
-            flash("Username must be unique. '" + form.username.data + "' is not available. ")
-            return redirect('/register')
-        else:
-            programMemory[form.username.data.lower()] = [form.password.data, form.username.data, form.multifa.data]
-            flash("Successful")
-            for element in programMemory.keys():
-                print(element)
-            return redirect('/index')
+        user = models.LoginUser(username=form.username.data, mfa=form.mfa.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Congratulations, you are now a registered user!')
+        return redirect(url_for('login'))
     else:
         return render_template('register.html', title='Sign Up', form=form)
 

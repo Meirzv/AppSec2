@@ -7,14 +7,14 @@ from app.models import LoginUser
 class LoginForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired()])
     password = PasswordField("Password", validators=[DataRequired(), Length(min=6, max=15)])
-    mfa = IntegerField("2FA - Phone Number", validators=[optional()])
+    mfa = StringField("2FA - Phone Number", validators=[optional()])
     submit = SubmitField("Login")
 
 
 class RegisterForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired()])
-    password = PasswordField("Password", validators=[DataRequired(), Length(min=6, max=15)])
-    mfa = IntegerField("2FA - Phone Number", validators=[optional()])
+    password = PasswordField("Password", validators=[DataRequired(), Length(min=1, max=15)])
+    mfa = StringField("2FA - Phone Number", validators=[optional()])
     submit = SubmitField("Register Now")
 
     def validate_username(self, username):
