@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
+{% extends "layout.html" %}
+{% block content %}
+
       {% if title %}
       <title>{{ title }} </title>
       {% else %}
@@ -26,20 +26,12 @@
             {% endfor %}
         </p>
         <p>
-            {{ form.multifa.label  }}<br>
-            {{ form.multifa(id = "2fa") }}
+            {{ form.mfa.label  }}<br>
+            {{ form.mfa(id = "2fa") }}
         </p>
         <p>{{ form.submit() }}</p>
     </form>
 
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul id="failure">
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-    {% endwith %}
     </body>
-</html>
+
+{% endblock %}

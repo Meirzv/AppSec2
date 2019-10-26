@@ -1,22 +1,27 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, validators, IntegerField
-from app import app
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, IntegerField
+from wtforms.validators import DataRequired, Length, EqualTo, ValidationError, optional
+from app.models import LoginUser
 
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', [validators.input_required()])
-    password = PasswordField('Password', [validators.input_required()])
-    multifa = IntegerField("2FA - Phone Number", [validators.optional()])
-    remember_me = BooleanField('Remember Me', [validators.optional()])
-    submit = SubmitField('Sign In')
+    username = StringField("Username", validators=[DataRequired()])
+    password = PasswordField("Password", validators=[DataRequired(), Length(min=6, max=15)])
+    mfa = IntegerField("2FA - Phone Number", validators=[optional()])
+    submit = SubmitField("Login")
 
 
 class RegisterForm(FlaskForm):
-    username = StringField('Username', [validators.input_required()])
-    password = PasswordField('Password', [validators.input_required()])
-    multifa = IntegerField("2FA - Phone Number", [validators.optional()])
-    submit = SubmitField('Sign Up')
+    username = StringField("Username", validators=[DataRequired()])
+    password = PasswordField("Password", validators=[DataRequired(), Length(min=6, max=15)])
+    mfa = IntegerField("2FA - Phone Number", validators=[optional()])
+    submit = SubmitField("Register Now")
+
+    def validate_username(self, username):
+        user = LoginUser.query.filter_by(username=username.data).first()
+        if user is not None:
+            raise ValidationError('Username is already taken! Please use a different Username.')
 
 
 class SpellChecker(FlaskForm):
-    command = StringField('Spell check words input', [validators.input_required()])
+    command = StringField('Spell check words input', validators=[DataRequired()])

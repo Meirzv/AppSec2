@@ -1,6 +1,7 @@
 from flask import render_template, flash, redirect, request
 from app import app
 from app.forms import LoginForm, RegisterForm, SpellChecker
+from app.models import LoginUser
 
 programMemory = dict()  # [key = lower key username. value = 1) password, 2) original username, 3) 2fa]
 
