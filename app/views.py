@@ -42,9 +42,11 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
+        flash(Markup('Congratulations, you are now a registered user! <li class="meir" id="success"> success </li>'))
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     else:
+        flash(Markup('Something went wrong. Please try to register again <li class="meir" id="success"> failure </li>'))
         return render_template('register.html', title='Sign Up', form=form)
 
 
