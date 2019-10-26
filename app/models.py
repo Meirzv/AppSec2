@@ -16,6 +16,9 @@ class LoginUser(db.Model, UserMixin):
     def is_active(self):
         return True
 
+    def get_id(self):
+        return self.username
+
     def is_authenticated(self):
         return self.authenticated
 
