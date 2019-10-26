@@ -5,7 +5,9 @@ import subprocess
 from app import app, db, models
 from app.forms import LoginForm, RegisterForm, SpellChecker
 from app.models import LoginUser
+import os
 
+basedir = os.path.abspath(os.path.dirname(__file__))
 login_manager = LoginManager(app)
 login_manager.init_app(app)
 
@@ -59,7 +61,7 @@ def spell_checker():
     if form.validate_on_submit():
         p1 = subprocess.Popen("echo " + form.command.data + " > words.txt", shell=True)
         p1.wait()
-        p2 = subprocess.Popen('./a.out words.txt wordlist.txt', stdin=None, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        p2 = subprocess.Popen(basedir + '/a.out words.txt wordlist.txt', stdin=None, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         p3 = p2.stdout
         output = list()
         for words in p3:
