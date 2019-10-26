@@ -1,10 +1,10 @@
-from flask import render_template, redirect, url_for, flash, request, Markup
+from flask import render_template, redirect, url_for, flash, Markup
 from flask_login import LoginManager, current_user, login_required, logout_user, login_user
 import subprocess
 
 from app import app, db, models
 from app.forms import LoginForm, RegisterForm, SpellChecker
-from app.models import LoginUser
+
 import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
