@@ -70,7 +70,7 @@ def spell_checker():
                 output.append(word)
 
       #  print(*output, sep=', ')
-        flash(Markup('Misspelled words are: <li class="meir" id="textout">' + print(*output, sep=', ') + ' </li>'))
+        flash(Markup('Misspelled words are: <li class="meir" id="textout">' + output + ' </li>'))
     return render_template('spell_check.html', title="Spell Check App", form=form)
 
 
