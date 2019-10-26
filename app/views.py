@@ -53,12 +53,14 @@ def register():
         return render_template('register.html', title='Sign Up', form=form)
 
 
-@app.route('/spell_check')
+@app.route('/spell_check', methods=['GET', 'POST'])
 def spell_checker():
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
     form = SpellChecker()
+    print("okay so far1")
     if form.validate_on_submit():
+        print("okay so far")
         p1 = subprocess.Popen("echo " + form.command.data + " > words.txt", shell=True)
         p1.wait()
         p2 = subprocess.Popen(basedir + '/a.out words.txt wordlist.txt', stdin=None, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -69,9 +71,12 @@ def spell_checker():
             for word in words:
                 output.append(word)
 
-      #  print(*output, sep=', ')
-        flash(Markup('Misspelled words are: <li class="meir" id="textout">' + output + ' </li>'))
-    return render_template('spell_check.html', title="Spell Check App", form=form)
+        print("this is the output " + str(output))
+        #print(*output, sep=', ')
+        flash(Markup('Misspelled words are: <li class="meir" id="textout">' + str(output) + ' </li>'))
+        return redirect(url_for('spell_checker'))
+    else:
+        return render_template('spell_check.html', title="Spell Check App", form=form)
 
 
 @app.route('/index')

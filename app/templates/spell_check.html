@@ -1,16 +1,10 @@
 {% extends "layout.html" %}
 {% block content %}
 
-      {% if title %}
-      <title>{{ title }} </title>
-      {% else %}
-      <title>Welcome to Meir</title>
-      {% endif %}
-    </head>
-    <body>
+
     <h1>{{title}}</h1>
 
-        <form action="{{ url_for('spell_checker') }}" method="post" novalidate >
+        <form action="{{ (url_for('spell_checker')) }}"  method="post"  >
         {{ form.hidden_tag() }}
     <p>
             {{ form.command.label  }}<br>
@@ -19,18 +13,11 @@
             <span id = "incorrect" style="color: red;">[{{ error }}]</span>
             {% endfor %}
     </p>
-        <p>{{ form.submit() }}</p>
+            <p>
+               {{ form.submit() }}
+            </p>
 
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-    {% endwith %}
         </form>
 
-    </body>
+
 {% endblock %}

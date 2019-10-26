@@ -31,13 +31,3 @@ class LoginUser(db.Model, UserMixin):
     def check_password(self, password):
         return check_password_hash(self.pw_hash, password)
 
-
-# class User(db.Model):
-#     username = db.Column(db.String(120), unique=True, nullable=False, primary_key=True)
-#     _2fa = db.Column(db.String(80), nullable=False)
-#
-#     def set_password(self, password):
-#         self.password = generate_password_hash(password)
-#
-#     def get_password(self, password):
-#         return check_password_hash(self.password, password)
