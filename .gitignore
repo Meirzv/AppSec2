@@ -7,4 +7,9 @@ virtualenv.txt
 __pycache__/config.cpython-37.pyc
 app/__pycache__/__init__.cpython-37.pyc
 app/__pycache__/forms.cpython-37.pyc
+sub.py
+sub2.py
+words.txt
+wordlist.txt
+test_wordlist.txt
 .idea/workspace.xml
