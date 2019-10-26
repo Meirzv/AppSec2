@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for, flash, request
+from flask import render_template, redirect, url_for, flash, request, Markup
 from flask_login import LoginManager, current_user, login_required, logout_user, login_user
 
 from app import app, db, models
@@ -8,9 +8,10 @@ from app.models import LoginUser
 login_manager = LoginManager(app)
 login_manager.init_app(app)
 
+
 @login_manager.user_loader
 def user_loader(user_id):
-    print ("LOADING USER FOR " + user_id)
+    print("LOADING USER FOR " + user_id)
     return models.LoginUser.query.get(user_id)
 
 
@@ -22,11 +23,11 @@ def login():
     if form.validate_on_submit():
         user = models.LoginUser.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
-            flash('Invalid username or password', "failure")
-            print ("INVALID")
+            flash(Markup('Invalid username or password <li class="meir" id="result"> incorrect Username/password or Two-factor failure </li>'))
+            print("INVALID")
             return redirect(url_for('login'))
         login_user(user)
-        flash('Logged in successfully.',"success")
+        flash(Markup('Logged in successfully. <li class="meir" id="result"> success </li>'))
         return redirect(url_for('spell_checker'))
     return render_template('login.html', title='Sign In', form=form)
 
@@ -59,3 +60,10 @@ def spell_checker():
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect('index')
