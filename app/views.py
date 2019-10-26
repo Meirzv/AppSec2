@@ -60,12 +60,10 @@ def spell_checker():
         return redirect(url_for('login'))
     form = SpellChecker()
     if form.validate_on_submit():
-        #p1 = subprocess.Popen("echo " + form.command.data + " > words.txt", shell=True)
         f = open("words.txt", "w")
         f.write(form.command.data)
         f.close()
 
-        #p1.wait()
         p2 = subprocess.Popen(basedir + '/a.out words.txt wordlist.txt', stdin=None, shell=True, stdout=subprocess.PIPE,
                               stderr=subprocess.PIPE)
         p3 = p2.stdout
@@ -78,7 +76,7 @@ def spell_checker():
                 else:
                     output = output + ", " + word
 
-        flash(Markup('Misspelled words are: <li class="meir" id="textout">' + output + ' </li>'))
+        flash(Markup('<li id=textout>Misspelled words are:  </li><li class="meir" id="misspelled">' + output + ' </li>'))
 
     return render_template('spell_check.html', title="Spell Check App", form=form)
 
