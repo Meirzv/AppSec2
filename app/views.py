@@ -26,7 +26,8 @@ def login():
     if form.validate_on_submit():
         user = models.LoginUser.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
-            flash(Markup('Invalid username or password <li class="meir" id="result"> incorrect Username/password or Two-factor failure </li>'))
+            flash(Markup(
+                'Invalid username or password <li class="meir" id="result"> incorrect Username/password or Two-factor failure </li>'))
             print("INVALID")
             return redirect(url_for('login'))
         login_user(user)
@@ -58,25 +59,28 @@ def spell_checker():
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
     form = SpellChecker()
-    print("okay so far1")
     if form.validate_on_submit():
-        print("okay so far")
-        p1 = subprocess.Popen("echo " + form.command.data + " > words.txt", shell=True)
-        p1.wait()
-        p2 = subprocess.Popen(basedir + '/a.out words.txt wordlist.txt', stdin=None, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        #p1 = subprocess.Popen("echo " + form.command.data + " > words.txt", shell=True)
+        f = open("words.txt", "w")
+        f.write(form.command.data)
+        f.close()
+
+        #p1.wait()
+        p2 = subprocess.Popen(basedir + '/a.out words.txt wordlist.txt', stdin=None, shell=True, stdout=subprocess.PIPE,
+                              stderr=subprocess.PIPE)
         p3 = p2.stdout
-        output = list()
+        output = None
         for words in p3:
             words = words.decode("utf-8").split()
             for word in words:
-                output.append(word)
+                if output is None:
+                    output = word
+                else:
+                    output = output + ", " + word
 
-        print("this is the output " + str(output))
-        #print(*output, sep=', ')
-        flash(Markup('Misspelled words are: <li class="meir" id="textout">' + str(output) + ' </li>'))
-        return redirect(url_for('spell_checker'))
-    else:
-        return render_template('spell_check.html', title="Spell Check App", form=form)
+        flash(Markup('Misspelled words are: <li class="meir" id="textout">' + output + ' </li>'))
+
+    return render_template('spell_check.html', title="Spell Check App", form=form)
 
 
 @app.route('/index')
@@ -90,3 +94,4 @@ def index():
 def logout():
     logout_user()
     return redirect('index')
+
