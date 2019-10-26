@@ -1,5 +1,6 @@
 from flask import render_template, redirect, url_for, flash, request, Markup
 from flask_login import LoginManager, current_user, login_required, logout_user, login_user
+import subprocess
 
 from app import app, db, models
 from app.forms import LoginForm, RegisterForm, SpellChecker
@@ -55,6 +56,19 @@ def spell_checker():
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
     form = SpellChecker()
+    if form.validate_on_submit():
+        p1 = subprocess.Popen("echo " + form.command.data + " > words.txt", shell=True)
+        p1.wait()
+        p2 = subprocess.Popen('./a.out words.txt wordlist.txt', stdin=None, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        p3 = p2.stdout
+        output = list()
+        for words in p3:
+            words = words.decode("utf-8").split()
+            for word in words:
+                output.append(word)
+
+      #  print(*output, sep=', ')
+        flash(Markup('Misspelled words are: <li class="meir" id="textout">' + print(*output, sep=', ') + ' </li>'))
     return render_template('spell_check.html', title="Spell Check App", form=form)
 
 
