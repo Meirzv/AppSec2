@@ -7,11 +7,11 @@
 {#                {% endif %}#}
                 <li class="nav-item"><a href="{{ url_for('spell_checker') }}" class="nav-link {% if enrollment %}active{% endif %}">Spell Checker</a></li>
 
-{#                {% if not session['username'] %}#}
+                {% if not current_user.is_authenticated %}
                 <li class="nav-item"><a href="{{ url_for('login') }}" class="nav-link {% if login %}active{% endif %}">Login</a></li>
-{#                {% else %}#}
-{#                <li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link">Logout</a></li>#}
-{#                {% endif %}#}
+                {% else %}
+                <li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link">Logout</a></li>
+                {% endif %}
             </ul>
         </nav>
         <hr>
