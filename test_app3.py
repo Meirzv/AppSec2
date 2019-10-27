@@ -43,6 +43,8 @@ def spell_check(session, ctoken = None, command= None):
 
     if command is None:
         command = "No"
+    else:
+        command = "meirzeevi"
 
 
     print(r.text)
