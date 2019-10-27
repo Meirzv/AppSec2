@@ -33,13 +33,17 @@ def login(uname, pword, mfa, login="Login", session=None):
     return session
 
 
-def spell_check(session, ctoken = None, command= "few word meirzeevi"):
+def spell_check(session, ctoken = None, command= None):
 
     r = session.post(server_spellcheck)
 
     if ctoken is None:
         ctoken = getElementById(r.text, "csrf_token")
         ctoken = ctoken['value']
+
+    if command is None:
+        command = "No"
+
 
     print(r.text)
     spell_check_data = {"csrf_token": ctoken, "command": command, "submit": "Go!"}
@@ -51,7 +55,7 @@ def spell_check(session, ctoken = None, command= "few word meirzeevi"):
     print(r.text)
     print("********************")
     print(misspelled_note)
-    return "meirzeevi" in str(misspelled_note).split(" ")
+    return command in str(misspelled_note).split(" ")
 
 class FeatureTest(unittest.TestCase):
     def test_spell_check_with_wrong_csrftoken_after_login(self):
@@ -61,7 +65,14 @@ class FeatureTest(unittest.TestCase):
         print(resp)
         self.assertFalse(resp, "Success! CSRF attack was prevented!")
 
-    def test_spell_check_with_correct_csrftoken_after_login(self):
+    def test_spell_check_with_correct_csrftoken_after_login_misspelled_output(self):
+        session = login( "meir", "12345", "123", "Login")
+        resp = spell_check(session, None, "few word meirzeevi")
+        print("k1")
+        print(resp)
+        self.assertTrue(resp, "Success! The correct misspelled words is presented")
+
+    def test_spell_check_with_correct_csrftoken_after_login_no_misspelled_output(self):
         session = login( "meir", "12345", "123", "Login")
         resp = spell_check(session, None)
         print("k1")
