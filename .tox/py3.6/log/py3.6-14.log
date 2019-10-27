@@ -1,0 +1,8 @@
+action: py3.6, msg: envreport
+cwd: /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code
+cmd: '/Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code/.tox/py3.6/bin/python' -m pip freeze
+Django==2.2.6
+djangorestframework==3.10.3
+my-tox-tested-package==0.0.1
+pytz==2019.3
+sqlparse==0.3.0

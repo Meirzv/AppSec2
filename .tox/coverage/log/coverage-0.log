@@ -1,0 +1,9 @@
+action: coverage, msg: getenv
+cwd: /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code/.tox
+cmd: /usr/local/opt/python/bin/python3.7 -m virtualenv --no-download --python /usr/local/opt/python/bin/python3.7 coverage
+Already using interpreter /usr/local/opt/python/bin/python3.7
+Using base prefix '/usr/local/Cellar/python/3.7.4_1/Frameworks/Python.framework/Versions/3.7'
+New python executable in /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code/.tox/coverage/bin/python3.7
+Also creating executable in /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code/.tox/coverage/bin/python
+Installing setuptools, pip, wheel...
+done.

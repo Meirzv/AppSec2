@@ -1,0 +1,15 @@
+action: py3.5, msg: installpkg
+cwd: /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code
+cmd: '/Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code/.tox/py3.5/bin/python' -m pip install --no-deps -U .tox/.tmp/package/1/my-tox-tested-package-0.0.1.zip
+Processing ./.tox/.tmp/package/1/my-tox-tested-package-0.0.1.zip
+Building wheels for collected packages: my-tox-tested-package
+  Building wheel for my-tox-tested-package (setup.py): started
+  Building wheel for my-tox-tested-package (setup.py): finished with status 'done'
+  Created wheel for my-tox-tested-package: filename=my_tox_tested_package-0.0.1-cp37-none-any.whl size=4174 sha256=7a90e6bcd8488c6c3b7c3deaf05da42e41de827288c065f4d5de2d5777dd4051
+  Stored in directory: /Users/maorzeevi/Library/Caches/pip/wheels/c7/b9/0a/9118ee7810b10059323741d50e3485751022a7fa4cb5268711
+Successfully built my-tox-tested-package
+Installing collected packages: my-tox-tested-package
+  Found existing installation: my-tox-tested-package 0.0.1
+    Not uninstalling my-tox-tested-package at /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code, outside environment /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code/.tox/py3.5/bin/..
+    Can't uninstall 'my-tox-tested-package'. No files were found to uninstall.
+Successfully installed my-tox-tested-package-0.0.1

@@ -1,0 +1,23 @@
+action: py3.6, msg: installpkg
+cwd: /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code
+cmd: '/Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code/.tox/py3.6/bin/python' -m pip install --exists-action w .tox/.tmp/package/1/my-tox-tested-package-0.0.1.zip
+Processing ./.tox/.tmp/package/1/my-tox-tested-package-0.0.1.zip
+Collecting Django>=1.11.0
+  Using cached https://files.pythonhosted.org/packages/b2/79/df0ffea7bf1e02c073c2633702c90f4384645c40a1dd09a308e02ef0c817/Django-2.2.6-py3-none-any.whl
+Collecting djangorestframework>=3.6.0
+  Using cached https://files.pythonhosted.org/packages/33/8e/87a4e0025e3c4736c1dc728905b1b06a94968ce08de15304417acb40e374/djangorestframework-3.10.3-py3-none-any.whl
+Collecting pytz
+  Using cached https://files.pythonhosted.org/packages/e7/f9/f0b53f88060247251bf481fa6ea62cd0d25bf1b11a87888e53ce5b7c8ad2/pytz-2019.3-py2.py3-none-any.whl
+Collecting sqlparse
+  Using cached https://files.pythonhosted.org/packages/ef/53/900f7d2a54557c6a37886585a91336520e5539e3ae2423ff1102daf4f3a7/sqlparse-0.3.0-py2.py3-none-any.whl
+Building wheels for collected packages: my-tox-tested-package
+  Building wheel for my-tox-tested-package (setup.py): started
+  Building wheel for my-tox-tested-package (setup.py): finished with status 'done'
+  Created wheel for my-tox-tested-package: filename=my_tox_tested_package-0.0.1-cp37-none-any.whl size=4174 sha256=8deca5a43e46099c77eafe1f6bc0208bd33084c6d5ffcefb985795c24df30107
+  Stored in directory: /Users/maorzeevi/Library/Caches/pip/wheels/c7/b9/0a/9118ee7810b10059323741d50e3485751022a7fa4cb5268711
+Successfully built my-tox-tested-package
+Installing collected packages: pytz, sqlparse, Django, djangorestframework, my-tox-tested-package
+  Found existing installation: my-tox-tested-package 0.0.1
+    Not uninstalling my-tox-tested-package at /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code, outside environment /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code/.tox/py3.6/bin/..
+    Can't uninstall 'my-tox-tested-package'. No files were found to uninstall.
+Successfully installed Django-2.2.6 djangorestframework-3.10.3 my-tox-tested-package-0.0.1 pytz-2019.3 sqlparse-0.3.0
