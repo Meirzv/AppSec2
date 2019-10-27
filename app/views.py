@@ -14,7 +14,6 @@ login_manager.init_app(app)
 
 @login_manager.user_loader
 def user_loader(user_id):
-    print("LOADING USER FOR " + user_id)
     return models.LoginUser.query.get(user_id)
 
 
@@ -75,6 +74,9 @@ def spell_checker():
                     output = word
                 else:
                     output = output + ", " + word
+
+        if output is None:
+            output = " No misspelled words"
 
         flash(Markup('<li id=textout>Misspelled words are:  </li><li class="meir" id="misspelled">' + output + ' </li>'))
 
