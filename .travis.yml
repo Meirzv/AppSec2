@@ -1,9 +1,16 @@
 language: python
-python: "3.7"
+dist: xenial
+python:
+  - 3.5
+  - 3.6
+  - 3.7
+services:
+  - redis
+env:
+  - FLASK=1.11.0
 install:
-    - pip install tox-travis
-    - pip install -r requirements.txt
-
+  - pip install -q Flask==$FLASK
+  - pip install -q -r requirements.txt
+  - pip install -q -e .
 script:
-    - flask run &
-    - tox
+  - python setup.py test

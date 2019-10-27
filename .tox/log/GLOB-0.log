@@ -3,51 +3,46 @@ cwd: /home/appsec/Desktop/AppSec2
 cmd: /home/appsec/Desktop/AppSec2/venv/bin/python3 setup.py sdist --formats=zip --dist-dir .tox/dist
 running sdist
 running egg_info
-writing my_tox_tested_package.egg-info/PKG-INFO
-writing dependency_links to my_tox_tested_package.egg-info/dependency_links.txt
-writing entry points to my_tox_tested_package.egg-info/entry_points.txt
-writing requirements to my_tox_tested_package.egg-info/requires.txt
-writing top-level names to my_tox_tested_package.egg-info/top_level.txt
-reading manifest file 'my_tox_tested_package.egg-info/SOURCES.txt'
-writing manifest file 'my_tox_tested_package.egg-info/SOURCES.txt'
+writing Flask_Split.egg-info/PKG-INFO
+writing dependency_links to Flask_Split.egg-info/dependency_links.txt
+writing requirements to Flask_Split.egg-info/requires.txt
+writing top-level names to Flask_Split.egg-info/top_level.txt
+reading manifest file 'Flask_Split.egg-info/SOURCES.txt'
+writing manifest file 'Flask_Split.egg-info/SOURCES.txt'
 warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
 
 running check
-warning: check: missing required meta-data: url
-
-warning: check: missing meta-data: either (author and author_email) or (maintainer and maintainer_email) must be supplied
-
-creating my-tox-tested-package-0.0.1
-creating my-tox-tested-package-0.0.1/app
-creating my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info
-copying files to my-tox-tested-package-0.0.1...
-copying setup.py -> my-tox-tested-package-0.0.1
-copying app/__init__.py -> my-tox-tested-package-0.0.1/app
-copying app/forms.py -> my-tox-tested-package-0.0.1/app
-copying app/models.py -> my-tox-tested-package-0.0.1/app
-copying app/views.py -> my-tox-tested-package-0.0.1/app
-copying my_tox_tested_package.egg-info/PKG-INFO -> my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info
-copying my_tox_tested_package.egg-info/SOURCES.txt -> my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info
-copying my_tox_tested_package.egg-info/dependency_links.txt -> my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info
-copying my_tox_tested_package.egg-info/entry_points.txt -> my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info
-copying my_tox_tested_package.egg-info/requires.txt -> my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info
-copying my_tox_tested_package.egg-info/top_level.txt -> my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info
-Writing my-tox-tested-package-0.0.1/setup.cfg
-creating '.tox/dist/my-tox-tested-package-0.0.1.zip' and adding 'my-tox-tested-package-0.0.1' to it
-adding 'my-tox-tested-package-0.0.1'
-adding 'my-tox-tested-package-0.0.1/app'
-adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info'
-adding 'my-tox-tested-package-0.0.1/setup.cfg'
-adding 'my-tox-tested-package-0.0.1/PKG-INFO'
-adding 'my-tox-tested-package-0.0.1/setup.py'
-adding 'my-tox-tested-package-0.0.1/app/__init__.py'
-adding 'my-tox-tested-package-0.0.1/app/forms.py'
-adding 'my-tox-tested-package-0.0.1/app/models.py'
-adding 'my-tox-tested-package-0.0.1/app/views.py'
-adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info/requires.txt'
-adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info/top_level.txt'
-adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info/entry_points.txt'
-adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info/SOURCES.txt'
-adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info/PKG-INFO'
-adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info/dependency_links.txt'
-removing 'my-tox-tested-package-0.0.1' (and everything under it)
+creating Flask-Split-0.4.0
+creating Flask-Split-0.4.0/Flask_Split.egg-info
+creating Flask-Split-0.4.0/app
+copying files to Flask-Split-0.4.0...
+copying setup.py -> Flask-Split-0.4.0
+copying Flask_Split.egg-info/PKG-INFO -> Flask-Split-0.4.0/Flask_Split.egg-info
+copying Flask_Split.egg-info/SOURCES.txt -> Flask-Split-0.4.0/Flask_Split.egg-info
+copying Flask_Split.egg-info/dependency_links.txt -> Flask-Split-0.4.0/Flask_Split.egg-info
+copying Flask_Split.egg-info/not-zip-safe -> Flask-Split-0.4.0/Flask_Split.egg-info
+copying Flask_Split.egg-info/requires.txt -> Flask-Split-0.4.0/Flask_Split.egg-info
+copying Flask_Split.egg-info/top_level.txt -> Flask-Split-0.4.0/Flask_Split.egg-info
+copying app/__init__.py -> Flask-Split-0.4.0/app
+copying app/forms.py -> Flask-Split-0.4.0/app
+copying app/models.py -> Flask-Split-0.4.0/app
+copying app/views.py -> Flask-Split-0.4.0/app
+Writing Flask-Split-0.4.0/setup.cfg
+creating '.tox/dist/Flask-Split-0.4.0.zip' and adding 'Flask-Split-0.4.0' to it
+adding 'Flask-Split-0.4.0'
+adding 'Flask-Split-0.4.0/app'
+adding 'Flask-Split-0.4.0/Flask_Split.egg-info'
+adding 'Flask-Split-0.4.0/setup.cfg'
+adding 'Flask-Split-0.4.0/PKG-INFO'
+adding 'Flask-Split-0.4.0/setup.py'
+adding 'Flask-Split-0.4.0/app/__init__.py'
+adding 'Flask-Split-0.4.0/app/forms.py'
+adding 'Flask-Split-0.4.0/app/models.py'
+adding 'Flask-Split-0.4.0/app/views.py'
+adding 'Flask-Split-0.4.0/Flask_Split.egg-info/requires.txt'
+adding 'Flask-Split-0.4.0/Flask_Split.egg-info/top_level.txt'
+adding 'Flask-Split-0.4.0/Flask_Split.egg-info/SOURCES.txt'
+adding 'Flask-Split-0.4.0/Flask_Split.egg-info/PKG-INFO'
+adding 'Flask-Split-0.4.0/Flask_Split.egg-info/not-zip-safe'
+adding 'Flask-Split-0.4.0/Flask_Split.egg-info/dependency_links.txt'
+removing 'Flask-Split-0.4.0' (and everything under it)

@@ -1,44 +1,17 @@
-action: py3.5, msg: envreport
+action: py3.5, msg: installpkg
 cwd: /home/appsec/Desktop/AppSec2
-cmd: /home/appsec/Desktop/AppSec2/.tox/py3.5/bin/python -m pip freeze
-astroid==1.6.5
-beautifulsoup4==4.8.1
-cairocffi==1.1.0
-certifi==2019.9.11
-cffi==1.12.3
-chardet==3.0.4
-Click==7.0
-diffoscope==125
-Django==2.2.6
-djangorestframework==3.10.3
-Flask==1.1.1
-Flask-Login==0.4.1
-Flask-SQLAlchemy==2.4.1
-get==2019.4.13
-idna==2.8
-isort==4.3.4
-itsdangerous==1.1.0
-Jinja2==2.10.3
-lazy-object-proxy==1.4.3
-libarchive-c==2.8
-MarkupSafe==1.1.1
-mccabe==0.6.1
-my-tox-tested-package==0.0.1
-nose==1.3.7
-post==2019.4.13
-public==2019.4.13
-pycparser==2.19
-pylint==1.9.3
-python-dotenv==0.10.3
-python-magic==0.4.15
-pytz==2019.3
-query-string==2019.4.13
-request==2019.4.13
-requests==2.22.0
-six==1.12.0
-soupsieve==1.9.4
-SQLAlchemy==1.3.10
-sqlparse==0.3.0
-urllib3==1.25.6
-Werkzeug==0.16.0
-wrapt==1.10.11
+cmd: /home/appsec/Desktop/AppSec2/.tox/py3.5/bin/python -m pip install --no-deps -U .tox/.tmp/package/1/Flask-Split-0.4.0.zip
+Processing ./.tox/.tmp/package/1/Flask-Split-0.4.0.zip
+Building wheels for collected packages: Flask-Split
+  Building wheel for Flask-Split (setup.py): started
+  Building wheel for Flask-Split (setup.py): finished with status 'done'
+  Created wheel for Flask-Split: filename=Flask_Split-0.4.0-cp36-none-any.whl size=3975 sha256=4fe9ece460f4a507caf9f519cfa2b8f4fe3c134d8a790d5c2b77bf0e6c7c1f1b
+  Stored in directory: /home/appsec/.cache/pip/wheels/af/a3/7c/fca4494b7215f92d58ae36d622a9897eab1ef85069a2171513
+Successfully built Flask-Split
+Installing collected packages: Flask-Split
+  Found existing installation: Flask-Split 0.4.0
+    Not uninstalling flask-split at /home/appsec/Desktop/AppSec2, outside environment /home/appsec/Desktop/AppSec2/.tox/py3.5
+    Can't uninstall 'Flask-Split'. No files were found to uninstall.
+Successfully installed Flask-Split-0.4.0
+WARNING: You are using pip version 19.3; however, version 19.3.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
