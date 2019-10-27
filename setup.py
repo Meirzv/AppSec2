@@ -1,48 +1,20 @@
-
-from setuptools import setup, Command
-import subprocess
-
-
-class PyTest(Command):
-    user_options = []
-
-    def initialize_options(self):
-        pass
-
-    def finalize_options(self):
-        pass
-
-    def run(self):
-        errno = subprocess.call(['py.test'])
-        raise SystemExit(errno)
-
-
+from setuptools import find_packages, setup
 setup(
-    name='Flask-Split',
-    version='0.4.0',
-    url='http://github.com/meirzv/AppSec2',
-    license='MIT',
-    author='Janne Vanhala',
-    author_email='janne.vanhala@gmail.com',
-    description='A/B testing for your Flask application',
-    long_description="Hi",
-    packages=['app'],
-    include_package_data=True,
-    zip_safe=False,
-    platforms='any',
+    name='my-tox-tested-package',
+    version='0.0.1',
+    packages=find_packages(exclude=['tests'],include=['app']),  # Include all the python modules except `tests`.
+    description='My custom package tested with tox',
+    long_description='A long description of my custom package tested with tox',
     install_requires=[
         'FLASK>=1.1.0',
-        'Redis>=2.6.0',
+        # Additional requirements, or parse the requirements file and add it here
     ],
-    cmdclass={'test': PyTest},
     classifiers=[
-        'Development Status :: 4 - Beta',
-        'Environment :: Web Environment',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
-        'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
-        'Topic :: Software Development :: Libraries :: Python Modules'
-    ]
+    ],
+    entry_points={
+        'pytest11': [
+            'tox_tested_package = tox_tested_package.fixtures'
+        ]
+    },
 )
