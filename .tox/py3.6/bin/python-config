@@ -1,4 +1,4 @@
-#!/Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code/.tox/py3.6/bin/python
+#!/home/appsec/Desktop/AppSec2/.tox/py3.6/bin/python
 
 import sys
 import getopt

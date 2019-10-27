@@ -1,8 +1,10 @@
 # ignore objects and archives, anywhere in the tree.
 *.[oa]
+*.log
 **/__pycache__/
 **/app/__pycache__/**
-**/.tox/
+/.tox/*
+tox/*
 __pycache__
 venv/
 virtualenv.txt

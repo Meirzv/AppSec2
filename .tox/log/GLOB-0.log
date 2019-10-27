@@ -1,6 +1,6 @@
 action: GLOB, msg: packaging
-cwd: /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code
-cmd: /usr/local/opt/python/bin/python3.7 setup.py sdist --formats=zip --dist-dir .tox/dist
+cwd: /home/appsec/Desktop/AppSec2
+cmd: /home/appsec/Desktop/AppSec2/venv/bin/python3 setup.py sdist --formats=zip --dist-dir .tox/dist
 running sdist
 running egg_info
 writing my_tox_tested_package.egg-info/PKG-INFO
@@ -37,17 +37,17 @@ creating '.tox/dist/my-tox-tested-package-0.0.1.zip' and adding 'my-tox-tested-p
 adding 'my-tox-tested-package-0.0.1'
 adding 'my-tox-tested-package-0.0.1/app'
 adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info'
+adding 'my-tox-tested-package-0.0.1/setup.cfg'
 adding 'my-tox-tested-package-0.0.1/PKG-INFO'
 adding 'my-tox-tested-package-0.0.1/setup.py'
-adding 'my-tox-tested-package-0.0.1/setup.cfg'
-adding 'my-tox-tested-package-0.0.1/app/models.py'
 adding 'my-tox-tested-package-0.0.1/app/__init__.py'
 adding 'my-tox-tested-package-0.0.1/app/forms.py'
+adding 'my-tox-tested-package-0.0.1/app/models.py'
 adding 'my-tox-tested-package-0.0.1/app/views.py'
-adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info/PKG-INFO'
-adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info/SOURCES.txt'
-adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info/entry_points.txt'
 adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info/requires.txt'
 adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info/top_level.txt'
+adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info/entry_points.txt'
+adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info/SOURCES.txt'
+adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info/PKG-INFO'
 adding 'my-tox-tested-package-0.0.1/my_tox_tested_package.egg-info/dependency_links.txt'
 removing 'my-tox-tested-package-0.0.1' (and everything under it)

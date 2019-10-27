@@ -1,15 +1,44 @@
-action: py3.5, msg: installpkg
-cwd: /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code
-cmd: '/Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code/.tox/py3.5/bin/python' -m pip install --no-deps -U .tox/.tmp/package/1/my-tox-tested-package-0.0.1.zip
-Processing ./.tox/.tmp/package/1/my-tox-tested-package-0.0.1.zip
-Building wheels for collected packages: my-tox-tested-package
-  Building wheel for my-tox-tested-package (setup.py): started
-  Building wheel for my-tox-tested-package (setup.py): finished with status 'done'
-  Created wheel for my-tox-tested-package: filename=my_tox_tested_package-0.0.1-cp37-none-any.whl size=4174 sha256=2bbb673b5a6a5457e7599bd861dfca9b625f12a100916dafccfb46b576b648d8
-  Stored in directory: /Users/maorzeevi/Library/Caches/pip/wheels/c7/b9/0a/9118ee7810b10059323741d50e3485751022a7fa4cb5268711
-Successfully built my-tox-tested-package
-Installing collected packages: my-tox-tested-package
-  Found existing installation: my-tox-tested-package 0.0.1
-    Not uninstalling my-tox-tested-package at /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code, outside environment /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code/.tox/py3.5/bin/..
-    Can't uninstall 'my-tox-tested-package'. No files were found to uninstall.
-Successfully installed my-tox-tested-package-0.0.1
+action: py3.5, msg: envreport
+cwd: /home/appsec/Desktop/AppSec2
+cmd: /home/appsec/Desktop/AppSec2/.tox/py3.5/bin/python -m pip freeze
+astroid==1.6.5
+beautifulsoup4==4.8.1
+cairocffi==1.1.0
+certifi==2019.9.11
+cffi==1.12.3
+chardet==3.0.4
+Click==7.0
+diffoscope==125
+Django==2.2.6
+djangorestframework==3.10.3
+Flask==1.1.1
+Flask-Login==0.4.1
+Flask-SQLAlchemy==2.4.1
+get==2019.4.13
+idna==2.8
+isort==4.3.4
+itsdangerous==1.1.0
+Jinja2==2.10.3
+lazy-object-proxy==1.4.3
+libarchive-c==2.8
+MarkupSafe==1.1.1
+mccabe==0.6.1
+my-tox-tested-package==0.0.1
+nose==1.3.7
+post==2019.4.13
+public==2019.4.13
+pycparser==2.19
+pylint==1.9.3
+python-dotenv==0.10.3
+python-magic==0.4.15
+pytz==2019.3
+query-string==2019.4.13
+request==2019.4.13
+requests==2.22.0
+six==1.12.0
+soupsieve==1.9.4
+SQLAlchemy==1.3.10
+sqlparse==0.3.0
+urllib3==1.25.6
+Werkzeug==0.16.0
+wrapt==1.10.11

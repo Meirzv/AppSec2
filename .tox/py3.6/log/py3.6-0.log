@@ -1,9 +1,10 @@
 action: py3.6, msg: getenv
-cwd: /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code/.tox
-cmd: /usr/local/opt/python/bin/python3.7 -m virtualenv --no-download --python /usr/local/opt/python/bin/python3.7 py3.6
-Already using interpreter /usr/local/opt/python/bin/python3.7
-Using base prefix '/usr/local/Cellar/python/3.7.4_1/Frameworks/Python.framework/Versions/3.7'
-New python executable in /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code/.tox/py3.6/bin/python3.7
-Also creating executable in /Users/maorzeevi/Desktop/NYU/Classes/Application Security/Assignments/Assignment 2/code/.tox/py3.6/bin/python
+cwd: /home/appsec/Desktop/AppSec2/.tox
+cmd: /home/appsec/Desktop/AppSec2/venv/bin/python3 -m virtualenv --no-download --python /home/appsec/Desktop/AppSec2/venv/bin/python3 py3.6
+Already using interpreter /home/appsec/Desktop/AppSec2/venv/bin/python3
+Using real prefix '/usr'
+Path not in prefix '/home/appsec/Desktop/AppSec2/venv/include/python3.6m' '/usr'
+New python executable in /home/appsec/Desktop/AppSec2/.tox/py3.6/bin/python3
+Also creating executable in /home/appsec/Desktop/AppSec2/.tox/py3.6/bin/python
 Installing setuptools, pip, wheel...
 done.
