@@ -1,10 +1,13 @@
 # ignore objects and archives, anywhere in the tree.
 *.[oa]
 *.log
+*.zip
+.tox/dist/my-tox-tested-package-0.0.1.zip
 **/__pycache__/
 **/app/__pycache__/**
 /.tox/*
 tox/*
+tox/dist*
 __pycache__
 venv/
 virtualenv.txt
