@@ -12,17 +12,26 @@ def getElementById(text, eid):
     return result
 
 
-def login(uname, pword, mfa, login="Login", session=None):
+def login(uname, pword, mfa, login="Login", session=None, ctoken=None):
     if session is None:
         session = requests.Session()
 
     r = session.post(server_login)
-    ctoken = getElementById(r.text, "csrf_token")
 
-    test_creds = {"csrf_token": ctoken['value'], "username": uname, "password": pword, "2fa": mfa, "submit": login}
+    if ctoken is None:
+        ctoken = getElementById(r.text, "csrf_token")
+        ctoken = ctoken['value']
+
+    test_creds = {"csrf_token": ctoken, "username": uname, "password": pword, "2fa": mfa, "submit": login}
     print(test_creds)
     r = session.post(server_login, data=test_creds)
-    success = getElementById(r.text, "result")
+
+    if ctoken != "faketoken":
+        success = getElementById(r.text, "result")
+    else:
+        success = "something" #should not have any value if csrf token is not correct
+    print(r.text)
+
     assert success is not None, "Missing id='result' in your login response"
     return "success" in str(success).split(" ")
 
@@ -37,3 +46,9 @@ class FeatureTest(unittest.TestCase):
     def test_invalid_login(self):
         resp = login("test", "notpassword", "None","Login")
         self.assertFalse(resp, "Invalid username or password - Success!")
+
+    def test_valid_login_invalid_csrf_token(self):
+        resp = login( "meir", "12345", "123", "Login", None , "faketoken")
+        print("k2")
+        print(resp)
+        self.assertFalse(resp, "Cannot login because an invalid csrf_token - Success!")
