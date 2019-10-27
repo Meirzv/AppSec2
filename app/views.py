@@ -78,7 +78,7 @@ def spell_checker():
         if output is None:
             output = " No misspelled words"
 
-        flash(Markup('<li id=textout>Misspelled words are:  </li><li class="meir" id="misspelled">' + output + ' </li>'))
+        flash(Markup('<li id=textout>Misspelled words are:  </li><li class="meir" id="misspelled"> ' + output + ' </li>'))
 
     return render_template('spell_check.html', title="Spell Check App", form=form)
 
