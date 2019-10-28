@@ -10,6 +10,7 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 login_manager = LoginManager(app)
 login_manager.init_app(app)
+login_manager.session_protection = "strong"
 
 
 @login_manager.user_loader
@@ -68,7 +69,7 @@ def spell_checker():
         p3 = p2.stdout
         output = None
         for words in p3:
-            words = words.decode("utf-8").split()
+            words = words.decode("utf-8").strip().split()
             for word in words:
                 if output is None:
                     output = word
